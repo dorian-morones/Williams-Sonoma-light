@@ -9,22 +9,20 @@ import {
 const IndexPage = () => {
 
   const [products, setProducts] = React.useState();
-  const [loading, setLoading] = React.useState(true);
+  // const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
-    setLoading(true)
+    // setLoading(true)
     fetch('https://www.westelm.com/services/catalog/v4/category/shop/new/all-new/index.json')
       .then(res => res.json())
       .then(response => {
         setProducts(response?.groups)
-        setLoading(false);
+        // setLoading(false);
       })
   }, []);
-
-  console.log('products', products)
-  if (loading === true) {
-    return <p>Loading...</p>
-  }
+  // if (loading === true) {
+  //   return <p>Loading...</p>
+  // }
   return (
     <Layout>
       <ProductGrid>
