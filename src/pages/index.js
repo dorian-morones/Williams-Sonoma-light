@@ -29,7 +29,7 @@ const IndexPage = () => {
     <Layout>
       <ProductGrid>
         {products && products.length > 0 && products?.map((product) => {
-          return <Product name={product.name} image={product.hero} />
+          return <Product name={product.name} image={product.hero} price={product.price || product.priceRange} />
         })
         }
       </ProductGrid>

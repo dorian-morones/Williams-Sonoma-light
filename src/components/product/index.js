@@ -3,8 +3,9 @@ import {
   ProductContainer
 } from './styles/product';
 
-const Product = ({name, image}) => {
+const Product = ({name, image, price}) => {
 
+  console.log(price)
   return (
     <ProductContainer>
       <img src={image?.href} alt='test' />
