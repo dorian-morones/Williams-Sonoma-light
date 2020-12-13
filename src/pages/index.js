@@ -38,9 +38,8 @@ const IndexPage = () => {
 
   const handleClose = () => {
     setShowCarousel(false);
+    setProductImages([])
   };
-
-  console.log("product", products);
 
   return (
     <Layout>
