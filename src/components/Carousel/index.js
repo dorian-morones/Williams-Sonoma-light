@@ -1,10 +1,12 @@
 import * as React from "react";
-import { 
+import {
   CarouselContainer,
   ImageContainer,
+  MainImage,
   CloseButton,
   Controls,
-  Arrow
+  Arrow,
+  Dot
 } from "./styles/carousel";
 
 const Carousel = ({ onClose, images }) => {
@@ -24,16 +26,16 @@ const Carousel = ({ onClose, images }) => {
 
   return (
     <CarouselContainer>
-      <CloseButton onClick={() => onClose()}>x</CloseButton>
+      <CloseButton onClick={() => onClose()}>&times;</CloseButton>
       <ImageContainer>
-        <img src={images[position]?.href} alt="product_Image" />
-        {/* {images !== undefined &&
-        images.map((item) => {
-          return <img src={item?.href} />;
-        })} */}
+        <MainImage src={images[position]?.href} alt="product_Image" />
+
         <Controls>
-          <Arrow onClick={() => handlePrev()}>Prev</Arrow>
-          <Arrow onClick={() => handleNext()}>Next</Arrow>
+          <Arrow onClick={() => handlePrev()}>&#8249;</Arrow>
+          { images.map((item, index) => {
+              return <Dot onClick={() => setPosition(index)} />;
+            })}
+          <Arrow onClick={() => handleNext()}>&#8250;</Arrow>
         </Controls>
       </ImageContainer>
     </CarouselContainer>
