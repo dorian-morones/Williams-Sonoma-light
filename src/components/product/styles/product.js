@@ -7,9 +7,14 @@ export const ProductContainer = styled.div.attrs(() => ({
   flex-direction: column;
   padding: 5px;
   border: solid 1px rgb(156 156 156 / 20%);
+  cursor: pointer;
+  transition: 0.5s;
+  background: #fff;
+
   &:hover {
     background: rgb(226 226 226 / 20%);
     border: solid 1px rgb(226 226 226 / 20%);
+    box-shadow: 0px 2px 5px 0px rgba(50,50,50,0.2);
   }
 `;
 
