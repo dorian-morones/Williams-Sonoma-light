@@ -9,4 +9,5 @@ export const CarouselContainer = styled.div.attrs(() => ({
   background: rgb(156 156 156 / 20%);
   left: 0;
   top: 0;
+  overflow: hidden
 `;

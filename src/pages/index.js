@@ -9,6 +9,9 @@ import Carousel from "../components/Carousel/";
 // markup
 const IndexPage = () => {
   const [products, setProducts] = React.useState();
+  const [showCarousel, setShowCarousel] = React.useState(false);
+  const [productImages, setProductImages] = React.useState();
+
   // const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
@@ -25,6 +28,20 @@ const IndexPage = () => {
   // if (loading === true) {
   //   return <p>Loading...</p>
   // }
+  const handleProductPhotos = (id) => {
+    console.log("handleProductPhotos", id);
+    let selectedItem = products.filter(item => item.id == id)
+    console.log('selectedItem', selectedItem[0]?.images);
+    setProductImages(selectedItem[0]?.images);
+    setShowCarousel(true);
+  };
+
+  const handleClose = () => {
+    setShowCarousel(false);
+  };
+
+  console.log("product", products);
+
   return (
     <Layout>
       <ProductGrid>
@@ -33,14 +50,16 @@ const IndexPage = () => {
           products?.map((product) => {
             return (
               <Product
+                id={product.id}
                 name={product.name}
                 image={product.hero}
                 price={product.price || product.priceRange}
+                handleProductPhotos={handleProductPhotos}
               />
             );
           })}
-          <Carousel />
       </ProductGrid>
+      {(showCarousel && productImages !== undefined) && <Carousel onClose={handleClose} images={productImages} />}
     </Layout>
   );
 };

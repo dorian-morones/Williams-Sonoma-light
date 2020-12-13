@@ -10,9 +10,8 @@ import {
   PriceItemSpecial,
 } from "./styles/product";
 
-const Product = ({ name, image, price }) => {
+const Product = ({ id, name, image, price, handleProductPhotos }) => {
   const handlePrice = (price) => {
-    console.log(price);
     if (price?.regular) {
       return (
         <>
@@ -27,18 +26,19 @@ const Product = ({ name, image, price }) => {
       );
     }
     if (price?.selling) {
-      console.log("price", price?.selling);
       return (
         <>
-          <PriceItem>Before: $<PriceItemVariant>{price?.selling?.high}</PriceItemVariant></PriceItem>
+          <PriceItem>
+            Before: $<PriceItemVariant>{price?.selling?.high}</PriceItemVariant>
+          </PriceItem>
           <PriceItem>Price: ${price?.selling?.low}</PriceItem>
         </>
       );
     }
   };
-
+  console.log("id", id);
   return (
-    <ProductContainer>
+    <ProductContainer onClick={() => handleProductPhotos(id)}>
       <ProductImage src={image?.href} alt="test" />
       <ProductDetails>
         <Title>{name.replace("&amp;", "&")}</Title>
