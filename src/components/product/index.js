@@ -36,9 +36,9 @@ const Product = ({ id, name, image, price, handleProductPhotos }) => {
       );
     }
   };
-  console.log("id", id);
+
   return (
-    <ProductContainer onClick={() => handleProductPhotos(id)}>
+    <ProductContainer onClick={() => handleProductPhotos(id)} data-testid='product-item'>
       <ProductImage src={image?.href} alt="test" />
       <ProductDetails>
         <Title>{name.replace("&amp;", "&")}</Title>

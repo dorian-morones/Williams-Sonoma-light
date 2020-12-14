@@ -10,7 +10,7 @@ import {
 const Layout = ({children}) => {
 
   return (
-    <div>
+    <div data-testid='layout-item'>
       <Menu><LogoImage src={Logo} alt={Logo} /></Menu>
       <main>{children}</main>
     </div>

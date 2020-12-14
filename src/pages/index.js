@@ -29,9 +29,7 @@ const IndexPage = () => {
   //   return <p>Loading...</p>
   // }
   const handleProductPhotos = (id) => {
-    console.log("handleProductPhotos", id);
-    let selectedItem = products.filter(item => item.id == id)
-    console.log('selectedItem', selectedItem[0]?.images);
+    let selectedItem = products.filter(item => item.id === id)
     setProductImages(selectedItem[0]?.images);
     setShowCarousel(true);
     window.scrollTo( 0, 0);

@@ -25,7 +25,7 @@ const Carousel = ({ onClose, images }) => {
   };
 
   return (
-    <CarouselContainer>
+    <CarouselContainer data-testid='carousel-item'>
       <CloseButton onClick={() => onClose()}>&times;</CloseButton>
       <ImageContainer>
         <MainImage src={images[position]?.href} alt="product_Image" />
@@ -33,7 +33,7 @@ const Carousel = ({ onClose, images }) => {
         <Controls>
           <Arrow onClick={() => handlePrev()}>&#8249;</Arrow>
           { images.map((item, index) => {
-              return <Dot active={index === position ? '#ffffff' : '#9e9e9e'} onClick={() => setPosition(index)} />;
+              return <Dot key={index} active={index === position ? '#ffffff' : '#9e9e9e'} onClick={() => setPosition(index)} />;
             })}
           <Arrow onClick={() => handleNext()}>&#8250;</Arrow>
         </Controls>
