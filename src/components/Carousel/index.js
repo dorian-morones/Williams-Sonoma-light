@@ -33,7 +33,7 @@ const Carousel = ({ onClose, images }) => {
         <Controls>
           <Arrow onClick={() => handlePrev()}>&#8249;</Arrow>
           { images.map((item, index) => {
-              return <Dot onClick={() => setPosition(index)} />;
+              return <Dot active={index === position ? '#ffffff' : '#9e9e9e'} onClick={() => setPosition(index)} />;
             })}
           <Arrow onClick={() => handleNext()}>&#8250;</Arrow>
         </Controls>

@@ -7,7 +7,7 @@ export const CarouselContainer = styled.div.attrs(() => ({
   position: absolute;
   width: 100vw;
   height: 100vh;
-  background: rgb(0 0 0 / 30%);
+  background: rgb(0 0 0 / 70%);
   left: 0;
   top: 0;
   overflow: hidden;
@@ -78,5 +78,5 @@ export const Dot = styled.div.attrs(() => ({
   margin-right: 5px;
   cursor: pointer;
   border-radius: 50%;
-  background: black;
+  background: ${({ active }) => active};
 `;
