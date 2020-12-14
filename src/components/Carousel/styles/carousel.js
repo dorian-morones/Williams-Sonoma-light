@@ -11,6 +11,8 @@ export const CarouselContainer = styled.div.attrs(() => ({
   left: 0;
   top: 0;
   overflow: hidden;
+  scroll-behavior: smooth;
+
 `;
 
 export const MainImage = styled.img.attrs(() => ({

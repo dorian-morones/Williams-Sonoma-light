@@ -34,6 +34,7 @@ const IndexPage = () => {
     console.log('selectedItem', selectedItem[0]?.images);
     setProductImages(selectedItem[0]?.images);
     setShowCarousel(true);
+    window.scrollTo( 0, 0);
   };
 
   const handleClose = () => {
