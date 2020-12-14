@@ -11,15 +11,20 @@ const Layout = ({ children }) => {
       <Helmet>
         {/* General tags */}
         <title>williams sonoma light</title>
+
+                {/* General tags */}
+                <title>williams sonoma light</title>
         <meta name="description" content="Small product page" />
         {/* OpenGraph tags */}
         <meta property="og:title" content='Williams sonoma light' />
         <meta property="og:description" content="Small product page" />
+        <meta name="image" content={Logo} />
 
         {/* Twitter Card tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content='Williams sonoma light' />
         <meta name="twitter:description" content="Small product page" />
+        <meta name="twitter:image" content={Logo} />
       </Helmet>
       <Menu>
         <LogoImage src={Logo} alt={Logo} />
