@@ -12,22 +12,16 @@ const IndexPage = () => {
   const [showCarousel, setShowCarousel] = React.useState(false);
   const [productImages, setProductImages] = React.useState();
 
-  // const [loading, setLoading] = React.useState(true);
-
   React.useEffect(() => {
-    // setLoading(true)
     fetch(
       "https://www.westelm.com/services/catalog/v4/category/shop/new/all-new/index.json"
     )
       .then((res) => res.json())
       .then((response) => {
         setProducts(response?.groups);
-        // setLoading(false);
       });
   }, []);
-  // if (loading === true) {
-  //   return <p>Loading...</p>
-  // }
+
   const handleProductPhotos = (id) => {
     let selectedItem = products.filter(item => item.id === id)
     setProductImages(selectedItem[0]?.images);

@@ -12,7 +12,6 @@ export const CarouselContainer = styled.div.attrs(() => ({
   top: 0;
   overflow: hidden;
   scroll-behavior: smooth;
-
 `;
 
 export const MainImage = styled.img.attrs(() => ({
@@ -54,6 +53,9 @@ export const Controls = styled.div.attrs(() => ({
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  width: 250px;
+  margin: 0 auto;
   margin-top: 20px;
 `;
 
@@ -63,22 +65,28 @@ export const Arrow = styled.div.attrs(() => ({
   display: flex;
   color: #000;
   font-size: 25px;
-  background: #fff;
+  background: rgb(255 255 255 / 80%);
   width: 30px;
   height: 30px;
   border-radius: 50%;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  &:hover{
+    background: rgb(255 255 255 / 100%);
+  }
 `;
 
 export const Dot = styled.div.attrs(() => ({
   className: "Dot",
 }))`
-  padding: 10px;
-  width:10px;
+  width: 15px;
+  height: 15px;
   margin-right: 5px;
   cursor: pointer;
   border-radius: 50%;
   background: ${({ active }) => active};
+  &:hover{
+    background: rgb(255 255 255 / 100%);
+  }
 `;
