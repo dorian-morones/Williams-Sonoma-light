@@ -11,7 +11,3 @@
     ```shell
     npm run test
     ```
-
-3.  **CI/CD**
-
-    Vercel! 
