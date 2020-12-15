@@ -2,7 +2,7 @@ import * as React from "react";
 import Layout from "../components/Layout/index";
 import Product from "../components/product/index";
 import { ProductGrid } from "./styles/main";
-
+import Logo from "src/images/logo.png";
 // Carousel
 import Carousel from "../components/Carousel/";
 
@@ -35,7 +35,7 @@ const IndexPage = () => {
   };
 
   return (
-    <Layout>
+    <Layout logoImg={Logo} data-testid="home-item">
       <ProductGrid>
         {products &&
           products.length > 0 &&
